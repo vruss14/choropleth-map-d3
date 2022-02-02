@@ -38,6 +38,32 @@ function visualizeData(education, counties) {
     .append('path')
     .attr('d', d3.geoPath())
     .attr('class', 'county')
+    .attr('fill', (d) => {
+        let county = education.find((item) => {
+            return item.fips === d.id
+        })
+
+        let percentage = county.bachelorsOrHigher;
+
+        if(percentage <= 10) {
+            return 'rgba(0, 132, 255, 0.15)'
+        } else if(percentage <= 15) {
+            return 'rgba(0, 132, 255, 0.4)'
+        } else if(percentage <= 20) {
+            return 'rgba(0, 132, 255, 0.66)'
+        } else if(percentage > 20) {
+            return 'rgba(0, 132, 255, 1)'
+        } else {
+            return 'White'
+        }
+    })
+    .attr('data-fips', (d) => d.id)
+    .attr('data-education', (d) => {
+        let correctCounty = education.find((item) => {
+            return item.fips === d.id
+        })
+        return correctCounty.bachelorsOrHigher
+    })
 
 }
 
