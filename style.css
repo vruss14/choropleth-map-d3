@@ -1,0 +1,9 @@
+#legend-wrapper {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+    padding: 2rem;
+}

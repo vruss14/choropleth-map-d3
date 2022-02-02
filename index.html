@@ -13,10 +13,38 @@
         <main class="d-flex min-vh-100 justify-content-center align-items-center" id="main">
             <div id="choropleth-container" class="container-fluid d-flex justify-content-center align-items-center flex-column bg-light my-auto ml-3 mr-3 p-2 col-9 border border-info rounded">
                 <h1 class="fs-3 text-center mt-3 mb-3" id="title">USA Educational Attainment</h1>
-                <h2 class="fs-5 text-center mb-3" id="description">2010-2014</h2>
+                <h2 class="fs-5 text-center mb-3" id="description">2010-2014: Percentages of adults (25+) with a bachelor's degree or higher</h2>
                 <div id="tooltip"></div>
             </div>
+
+            <div id="legend-wrapper">
+                <svg width="200" height="200" id="legend">
+                    <g>
+                        <rect x="25" y="0" width="5" height="40" fill="rgba(0, 132, 255, 0.15)" />
+                        <text x="50" y="25">10% or lower</text>
+                    </g>
+    
+                    <g>
+                        <rect x="25" y="50" width="5" height="40" fill="rgba(0, 132, 255, 0.4)" />
+                        <text x="50" y="75">15% or lower</text>
+                    </g>
+    
+                    <g>
+                        <rect x="25" y="100" width="5" height="40" fill="rgba(0, 132, 255, 0.66)" />
+                        <text x="50" y="125">20% or lower</text>
+                    </g>
+    
+                    <g>
+                        <rect x="25" y="150" width="5" height="40" fill="rgba(0, 132, 255, 1)" />
+                        <text x="50" y="175">Greater than 20%</text>
+                    </g>
+                </svg>
+            </div>
+
+
         </main>
+
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
