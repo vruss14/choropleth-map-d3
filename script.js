@@ -25,7 +25,8 @@ function visualizeData(education, counties) {
 
     let width = 950;
     let height = 650;
-    let padding = 60;
+
+    let tooltip = d3.select('#tooltip');
 
     const svg = d3.select("#choropleth-container")
     .append("svg")
@@ -63,6 +64,27 @@ function visualizeData(education, counties) {
             return item.fips === d.id
         })
         return correctCounty.bachelorsOrHigher
+    })
+    .on('mouseover', (event) => {
+        let d = event.target.__data__;
+
+        let tooltipCounty = education.find((item) => {
+            return item.fips === d.id
+        })
+
+        tooltip.transition()
+        .style('visibility', 'visible')
+
+        tooltip.attr('data-education', tooltipCounty.bachelorsOrHigher)
+        
+        tooltip.html(`
+        <p>${tooltipCounty.area_name}, ${tooltipCounty.state}</p>
+        <p>${tooltipCounty.bachelorsOrHigher}%</p>`)
+
+    })
+    .on('mouseout', () => {
+        tooltip.transition()
+        .style('visibility', 'hidden')
     })
 
 }

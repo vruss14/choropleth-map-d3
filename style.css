@@ -7,3 +7,24 @@
     margin: 4rem;
     padding: 2rem;
 }
+
+#choropleth-container {
+    position: relative;
+}
+
+#choropleth-container path:hover {
+    cursor: pointer;
+}
+
+#tooltip {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    padding: 2rem 1rem 1rem 1rem;
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    text-align: center;
+    visibility: hidden;
+    width: 13vw;
+}
