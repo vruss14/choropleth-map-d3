@@ -9,6 +9,7 @@ function fetchData() {
     })
     
     // topojson.feature() converts the data from topojson to GeoJSON format for D3
+    // All data is fetched first before calling the function with D3 methods
 
     fetch('https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json')
     .then(response => response.json())
@@ -20,18 +21,22 @@ function fetchData() {
 }
 
 function visualizeData(education, counties) {
-    console.log(education);
-    console.log(counties);
-
     let width = 950;
     let height = 650;
-
     let tooltip = d3.select('#tooltip');
+
+    // Draw the SVG canvas
 
     const svg = d3.select("#choropleth-container")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
+
+    // Each county is a path element in the SVG canvas
+    // All path elements are filled according to educational data
+
+    // Because educational data is in a separate dataset, the data
+    // is matched based on the fips/id connection
 
     svg.selectAll('path')
     .data(counties)
