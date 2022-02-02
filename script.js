@@ -47,16 +47,30 @@ function visualizeData(education, counties) {
         let percentage = county.bachelorsOrHigher;
 
         if(percentage <= 10) {
-            return 'rgba(0, 132, 255, 0.15)'
+            return 'rgba(0, 132, 255, 0.1)'
         } else if(percentage <= 15) {
-            return 'rgba(0, 132, 255, 0.4)'
+            return 'rgba(0, 132, 255, 0.2)'
         } else if(percentage <= 20) {
-            return 'rgba(0, 132, 255, 0.66)'
-        } else if(percentage > 20) {
+            return 'rgba(0, 132, 255, 0.3)'
+        } else if(percentage <= 25) {
+            return 'rgba(0, 132, 255, 0.4)'
+        } else if(percentage <= 30) {
+            return 'rgba(0, 132, 255, 0.5)'
+        } else if(percentage <= 35) {
+            return 'rgba(0, 132, 255, 0.6)'
+        } else if(percentage <= 40) {
+            return 'rgba(0, 132, 255, 0.7)'
+        } else if(percentage <= 45) {
+            return 'rgba(0, 132, 255, 0.8)'
+        } else if(percentage <= 50) {
+            return 'rgba(0, 132, 255, 0.9)'
+        } else if(percentage > 50) {
             return 'rgba(0, 132, 255, 1)'
         } else {
             return 'White'
         }
+
+
     })
     .attr('data-fips', (d) => d.id)
     .attr('data-education', (d) => {

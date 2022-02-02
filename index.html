@@ -11,32 +11,63 @@
     </head>
     <body class="bg-primary text-dark">
         <main class="d-flex min-vh-100 justify-content-center align-items-center" id="main">
-            <div id="choropleth-container" class="container-fluid d-flex justify-content-center align-items-center flex-column bg-light my-auto ml-3 mr-3 p-2 col-9 border border-info rounded">
+            <div id="choropleth-container" class="container-fluid d-flex justify-content-center align-items-center flex-column bg-light my-auto ml-3 mr-3 p-2 col-8 border border-info rounded">
                 <h1 class="fs-3 text-center mt-3 mb-3" id="title">USA Educational Attainment</h1>
                 <h2 class="fs-5 text-center mb-3" id="description">2010-2014: Percentages of adults (25+) with a bachelor's degree or higher</h2>
                 <div id="tooltip"></div>
             </div>
 
-            <div id="legend-wrapper">
-                <svg width="200" height="200" id="legend">
+            <div class="col-2" id="legend-wrapper">
+                <h3 class="fs-5 m-3">Legend</h3>
+                <svg width="200" height="500" id="legend">
                     <g>
-                        <rect x="0" y="0" width="40" height="40" fill="rgba(0, 132, 255, 0.15)" />
+                        <rect x="0" y="0" width="40" height="40" fill="rgba(0, 132, 255, 0.1)" />
                         <text x="55" y="25">10% or lower</text>
                     </g>
     
                     <g>
-                        <rect x="0" y="50" width="40" height="40" fill="rgba(0, 132, 255, 0.4)" />
+                        <rect x="0" y="50" width="40" height="40" fill="rgba(0, 132, 255, 0.2)" />
                         <text x="55" y="75">15% or lower</text>
                     </g>
     
                     <g>
-                        <rect x="0" y="100" width="40" height="40" fill="rgba(0, 132, 255, 0.66)" />
+                        <rect x="0" y="100" width="40" height="40" fill="rgba(0, 132, 255, 0.3)" />
                         <text x="55" y="125">20% or lower</text>
                     </g>
     
                     <g>
-                        <rect x="0" y="150" width="40" height="40" fill="rgba(0, 132, 255, 1)" />
-                        <text x="55" y="175">Greater than 20%</text>
+                        <rect x="0" y="150" width="40" height="40" fill="rgba(0, 132, 255, 0.4)" />
+                        <text x="55" y="175">25% or lower</text>
+                    </g>
+
+                    <g>
+                        <rect x="0" y="200" width="40" height="40" fill="rgba(0, 132, 255, 0.5)" />
+                        <text x="55" y="225">30% or lower</text>
+                    </g>
+
+                    <g>
+                        <rect x="0" y="250" width="40" height="40" fill="rgba(0, 132, 255, 0.6)" />
+                        <text x="55" y="275">35% or lower</text>
+                    </g>
+
+                    <g>
+                        <rect x="0" y="300" width="40" height="40" fill="rgba(0, 132, 255, 0.7)" />
+                        <text x="55" y="325">40% or lower</text>
+                    </g>
+
+                    <g>
+                        <rect x="0" y="350" width="40" height="40" fill="rgba(0, 132, 255, 0.8)" />
+                        <text x="55" y="375">45% or lower</text>
+                    </g>
+
+                    <g>
+                        <rect x="0" y="400" width="40" height="40" fill="rgba(0, 132, 255, 0.9)" />
+                        <text x="55" y="425">50% or lower</text>
+                    </g>
+
+                    <g>
+                        <rect x="0" y="450" width="40" height="40" fill="rgba(0, 132, 255, 1)" />
+                        <text x="55" y="475">Greater than 50%</text>
                     </g>
                 </svg>
             </div>
